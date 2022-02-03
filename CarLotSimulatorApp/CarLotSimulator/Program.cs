@@ -28,6 +28,50 @@ namespace CarLotSimulator
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+
+            var listOfCars = new CarLot();
+
+            var shinyCar = new Car();
+            shinyCar.Year = 2022;
+            shinyCar.Make = "Toyota";
+            shinyCar.Model = "Prius";
+            shinyCar.EngineNoise = "mmmmmm";
+            shinyCar.HonkNoise = "meep.";
+            shinyCar.IsDriveable = true;
+
+            listOfCars.CarList.Add(shinyCar);
+
+            var junkCar = new Car()
+            {
+                Year = 2003,
+                Make = "Chevrolet",
+                Model = "Impala",
+                EngineNoise = "BLUHBLUHBLUHBLUHBLUH",
+                HonkNoise = "Honnnnnk!",
+                IsDriveable = true,
+            };
+
+            listOfCars.CarList.Add(junkCar);
+
+            var brokenCar = new Car(1982, "Ford", "Ranger", "chunk...chunk...chunk...", "*silence*", false);
+
+            listOfCars.CarList.Add(brokenCar);
+
+            shinyCar.MakeEngineNoise(shinyCar.EngineNoise);
+            shinyCar.MakeHonkNoise(shinyCar.HonkNoise);
+
+            junkCar.MakeEngineNoise(junkCar.EngineNoise);
+            junkCar.MakeHonkNoise(junkCar.HonkNoise);
+
+            brokenCar.MakeEngineNoise(brokenCar.EngineNoise);
+            brokenCar.MakeHonkNoise(brokenCar.HonkNoise);
+
+            Console.WriteLine($"-----------------------------------------------------");
+            foreach (var car in listOfCars.CarList)
+            {
+                Console.WriteLine($"Year:{car.Year} | Make:{car.Make} | Model:{car.Model}");
+                Console.WriteLine($"-----------------------------------------------------");
+            }
         }
     }
 }
