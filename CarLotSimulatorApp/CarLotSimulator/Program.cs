@@ -40,6 +40,7 @@ namespace CarLotSimulator
             shinyCar.IsDriveable = true;
 
             listOfCars.CarList.Add(shinyCar);
+            Console.WriteLine($"{CarLot.numberOfCars} cars currently in the car lot.");
 
             var junkCar = new Car()
             {
@@ -52,10 +53,12 @@ namespace CarLotSimulator
             };
 
             listOfCars.CarList.Add(junkCar);
+            Console.WriteLine($"{CarLot.numberOfCars} cars currently in the car lot.");
 
             var brokenCar = new Car(1982, "Ford", "Ranger", "chunk...chunk...chunk...", "*silence*", false);
 
             listOfCars.CarList.Add(brokenCar);
+            Console.WriteLine($"{CarLot.numberOfCars} cars currently in the car lot.");
 
             shinyCar.MakeEngineNoise(shinyCar.EngineNoise);
             shinyCar.MakeHonkNoise(shinyCar.HonkNoise);
